@@ -18,14 +18,14 @@ export default class UserInterface{
         this.bar.y = 50;
         this.app.stage.addChild(this.bar);
 
-        let style = new PIXI.TextStyle({ fontFamily: ['Helvetica', 'Arial', 'sans-serif'], align: 'left', fontWeight: "bold", fill: 0x000000, fontSize: 12 });
+        let style = new PIXI.TextStyle({ fontFamily: ['Arial', 'sans-serif'], align: 'left', fontWeight: "bold", fill: 0x000000, fontSize: 12 });
         this.barLabel = new PIXI.Text('health', style);
         this.barLabel.x = 16;
-        this.barLabel.y = this.app.screen.height - 18;
+        this.barLabel.y = this.app.screen.height - 16;
         this.barLabel.zIndex = 101;
         this.app.stage.addChild(this.barLabel);
 
-        style = new PIXI.TextStyle({ fontFamily: ['Helvetica', 'Arial', 'sans-serif'], align: 'left', fontWeight: "bold", fill: 0xFFFFFF, fontSize: 24 });
+        style = new PIXI.TextStyle({ fontFamily: ['Arial', 'sans-serif'], align: 'left', fontWeight: "bold", fill: 0xFFFFFF, fontSize: 24 });
         this.scoreboard = new PIXI.Text('000000', style);
         this.scoreboard.x = 16;
         this.scoreboard.y = this.app.screen.height - 58;
@@ -37,7 +37,7 @@ export default class UserInterface{
         this.retry.zIndex = 105;
         this.app.stage.addChild(this.retry);
 
-        style = new PIXI.TextStyle({ fontFamily: ['Helvetica', 'Arial', 'sans-serif'], align: 'center', fontSize: 14 , fontWeight: 900});
+        style = new PIXI.TextStyle({ fontFamily: ['Arial', 'sans-serif'], align: 'center', fontSize: 14 , fontWeight: 900});
         this.welcomeMessage = new PIXI.Text('JS + pixi.js\r\n\r\nuse keyboard arrow keys to control movement and spacebar to fire\r\npreferably reach 50+ pts\r\n\r\n[ click left mouse button to play ]', style);
         this.welcomeMessage.anchor.set(0.5);
         this.welcomeMessage.x = (this.retry.width / 2);
@@ -108,7 +108,8 @@ export default class UserInterface{
 
         let tmp = '' + UserInterface.SCORE;
 
-        while(tmp.length < 6) tmp = '0' + tmp;
+        while(tmp.length < 6)
+            tmp = '0' + tmp;
         this.scoreboard.text = tmp; // + '/' + Levels.LEVEL;
 
         if(this.scoreboard.y != this.app.screen.height - 58)
@@ -117,7 +118,7 @@ export default class UserInterface{
         if(this.bar.y != this.app.screen.height-16)
             this.bar.y = this.app.screen.height-16;
 
-        if(this.barLabel.y != this.app.screen.height-18)
-            this.barLabel.y = this.app.screen.height - 18;
+        if(this.barLabel.y != this.app.screen.height-16)
+            this.barLabel.y = this.app.screen.height - 16;
     }
 }

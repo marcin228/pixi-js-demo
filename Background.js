@@ -1,7 +1,12 @@
 import Settings from './Settings.js';
 
+/** Class representing background. Add item and|or code to move them here. */
 export default class Background{
 
+    /**
+     * Create background.
+     * @param {*} app - global app object
+     */
     constructor(app){
 
         this.app = app;

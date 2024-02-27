@@ -25,6 +25,10 @@ export default class Driver{
         this.frame = 0;
     }
 
+    /**
+     * Reset whole game state to initial values.
+     * @returns void
+     */
     reset(){
 
         Driver.GAME_PAUSED = true;
@@ -49,6 +53,10 @@ export default class Driver{
         this.frame = 0;
     }
     
+    /**
+    *   Main game loop that calls draw method from objects and manages player input
+    *   @returns void
+    */
     loop(){
 
         if(!Driver.GAME_PAUSED){

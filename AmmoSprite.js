@@ -3,6 +3,10 @@ import RockSprite from './RockSprite.js';
 import Settings from './Settings.js';
 import UserInterface from './UserInterface.js';
 
+/**
+ * Ammo sprite + draw method with collision detection and logic handle
+ * @extends InteractiveSprite
+ */
 export default class AmmoSprite extends InteractiveSprite{
 
     constructor(app, objects){
@@ -34,17 +38,18 @@ export default class AmmoSprite extends InteractiveSprite{
 
             if(this.type != this.objects[i].type){
         
-                let bounds1 = this.sprite.getBounds();;
+                let bounds1 = this.sprite.getBounds();
                 let bounds2 = this.objects[i].sprite.getBounds();
 
                 if(bounds1.x < bounds2.x + bounds2.width && bounds1.x + bounds1.width > bounds2.x && bounds1.y < bounds2.y + bounds2.height && bounds1.y + bounds1.height > bounds2.y){
                     
+                    // @todo change from direct incrementation to update with a parameter from {@link Settings.js}
                     UserInterface.SCORE++;
                     RockSprite.ROCK_NUM--;
 
-                    this.app.b
                     this.objects[i].delete();
                     this.delete();
+
                     return;
                 }
             }
@@ -52,7 +57,8 @@ export default class AmmoSprite extends InteractiveSprite{
 
         this.currentLife--;
         this.sprite.alpha = (this.currentLife / this.totalLife);
-        if(this.currentLife < 0) this.delete();
+        if(this.currentLife < 0) 
+            this.delete();
         this.outOfBounds();
     }
 }
