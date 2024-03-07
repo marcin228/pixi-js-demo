@@ -13,6 +13,10 @@ export default class Driver{
 
     static GAME_PAUSED = true;
 
+    /**
+     * 
+     * @param {*} app 
+     */
     constructor(app){
 
         this.app = app;
@@ -54,7 +58,7 @@ export default class Driver{
     }
     
     /**
-    *   Main game loop that calls draw method from objects and manages player input
+    *   Main game loop that calls draw method from objects and manages player input. Here we call draw method from all objects that need to be drawn.
     *   @returns void
     */
     loop(){

@@ -2,6 +2,9 @@ import Driver from "./Driver.js";
 import Levels from "./Levels.js";
 import Settings from "./Settings.js";
 
+/**
+ * Handling user interface + SCORE and HEALTH.
+ */
 export default class UserInterface{
 
     static SCORE = 0;

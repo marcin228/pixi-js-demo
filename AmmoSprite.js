@@ -4,17 +4,24 @@ import Settings from './Settings.js';
 import UserInterface from './UserInterface.js';
 
 /**
- * Ammo sprite + draw method with collision detection and logic handle
+ * Ammo sprite with collision detection and logic handling.
  * @extends InteractiveSprite
  */
 export default class AmmoSprite extends InteractiveSprite{
 
+    /**
+     * 
+     * @param {*} app global app object
+     * @param {*} objects reference to objects array which contains all the objects that take part in collision checking
+     */
     constructor(app, objects){
         super(app, objects);
 
         this.ship = this.objects[0];
         this.totalLife = 88;
         this.currentLife = this.totalLife;
+
+        // @todo change it to ENUM
         this.type = 'ammo';
 
         let tmp = this.ship .getDirections();
@@ -29,6 +36,10 @@ export default class AmmoSprite extends InteractiveSprite{
         this.app.stage.addChild(this.sprite);
     }
 
+    /**
+     * Implementation of a draw method specific to this object.
+     * @returns void
+     */
     draw(){
 
         this.sprite.x += this.directionX * Settings.SHIP_SPEED_LIMIT * 2;

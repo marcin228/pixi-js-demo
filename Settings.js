@@ -1,3 +1,6 @@
+/**
+* 
+*/
 export default class Settings{
 
     static OBJECT_TOTAL_LIMIT = 150;
