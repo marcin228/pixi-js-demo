@@ -1,11 +1,11 @@
 import Settings from './Settings.js';
 
-/** Class representing background. Add item and|or code to move them here. */
+/** Class representing main game view's background. Add items and/or code to animate them here. */
 export default class Background{
 
     /**
      * Create background.
-     * @param {*} app - global app object
+     * @param {*} app global app object
      */
     constructor(app){
 

@@ -33,6 +33,7 @@ export default class InteractiveSprite{
                 this.sprite.y = 0;
 
             /*
+            // when objects have to disappear rather then continously fly in and out of screen
             if(this.sprite.x < 0 || this.sprite.x > this.app.screen.width || this.sprite.y < 0 || this.sprite.y > this.app.screen.height){
                 this.delete();
             }
@@ -43,5 +44,13 @@ export default class InteractiveSprite{
     delete(){    
         this.app.stage.removeChild(this.sprite);
         this.objects.splice(this.objects.indexOf(this), 1);
+    }
+
+    draw(){
+        return;
+    }
+
+    control(){
+        return;
     }
 }

@@ -1,5 +1,10 @@
+/** Class responsible for handling user input and passing info to all appropriately selected items, pubsub pattern. */
 export default class Controls{
 
+    /**
+     * 
+     * @param {*} controlled all subscribers that will receive info about captured controls
+     */
     constructor(controlled){
 
         this.controlled = controlled;
