@@ -11,12 +11,6 @@ export default class InteractiveSprite{
 
         if(this.constructor == InteractiveSprite)
             throw new Error('do not use this class directly')
-
-        if(this.draw == undefined)
-            throw new Error('draw method is not implemented')
-
-        if(this.control == undefined)
-            throw new Error('control method is not implemented')
     }
 
     outOfBounds(){
@@ -47,10 +41,10 @@ export default class InteractiveSprite{
     }
 
     draw(){
-        return;
+        throw new Error('draw method is not implemented')
     }
 
     control(){
-        return;
+        throw new Error('control method is not implemented')
     }
 }
